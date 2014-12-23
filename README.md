@@ -38,9 +38,9 @@ We're using node-tar (to unpack the GitHub source), node-archiver (to re-pack it
 
 Windows
 
-[nwgu-0.01.zip](https://dl.dropboxusercontent.com/u/1164739/steamtray.zip)
+[nwgu-0.01.zip](https://github.com/shrewdlogarithm/node-webkit-auto-update-demo/releases/download/0.01/nwgu.zip)
 
 Linux
 
-[nwgu-0.01.tar.gz](https://dl.dropboxusercontent.com/u/1164739/steamtray.tar.gz)
+[nwgu-0.01.tar.gz](https://github.com/shrewdlogarithm/node-webkit-auto-update-demo/releases/download/0.01/nwgu.tar.gz)
 
