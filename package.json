@@ -1,0 +1,7 @@
+{
+  "name": "node-webkit-auto-update-demo",
+  "main": "nw.html",
+  "window": {
+	"title": "Node Webkit GitHub Auto-Update Demo"
+  }
+}
