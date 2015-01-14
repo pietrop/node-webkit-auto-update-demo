@@ -9,7 +9,7 @@ var UPDATER = (function(my) {
     var tar = require("tar")
     var archiver = require('archiver');
 
-    var exepath = path.dirname(process.execPath)
+    var exepath = process.cwd()
 
     my.check_for_update = function(author, repo, success, failure) {
 
@@ -112,10 +112,17 @@ var UPDATER = (function(my) {
     }
 
     my.restart = function() {
+        // determine path to executable - it's different on OSX
+        var getexecutable = function() {
+            if (process.platform == "darwin")
+                return path.join(process.cwd(),"node-webkit.app","Contents","MacOS","node-webkit")
+            else
+                return process.execPath
+        }
 
-        // create a child process to run ourself
+        // spawn a new child of ourself
         var child_process = require("child_process");
-        var child = child_process.spawn(process.execPath, [], {detached: true});
+        var child = child_process.spawn(getexecutable(), [], {detached: true});
 
         // orphan it
         child.unref();
