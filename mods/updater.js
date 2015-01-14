@@ -9,7 +9,15 @@ var UPDATER = (function(my) {
     var tar = require("tar")
     var archiver = require('archiver');
 
-    var exepath = process.cwd()
+    // to determine where our package.nw lies we need a bit of trickery (for OSX at least)
+    var findlocal = function() {
+        if (process.platform != "darwin")
+            return path.dirname(process.execPath)
+        else
+            return process.execPath.substr(0,process.execPath.indexOf("node-webkit.app")) // I'm open to better ways of doing that
+    }
+
+    var exepath = findlocal()
 
     my.check_for_update = function(author, repo, success, failure) {
 
